@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="#" method="POST" class="form" id="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" onclick="login()">Login</button>
+            <hr>
+            <p>Don't have an account? <a href="#register">Register here</a>.</p>
+        </form>
+
+        <form action="#" method="POST" class="form" id="register" style="display:none;">
+            <h2>Register</h2>
+            <div class="form-group">
+                <label for="new-username">Username:</label>
+                <input type="text" id="new-username" name="new-username" required>
+            </div>
+            <div class="form-group">
+                <label for="new-email">Email:</label>
+                <input type="email" id="new-email" name="new-email" required>
+            </div>
+            <div class="form-group">
+                <label for="new-password">Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+            </div>
+            <button type="button" onclick="register()">Register</button>
+            <hr>
+            <p>Already have an account? <a href="#login" onclick="toggleForm()">Login here</a>.</p>
+        </form>
+    </div>
+
+    <script>
+        // Toggling between login and register forms
+        function toggleForm() {
+            var loginForm = document.getElementById('login');
+            var registerForm = document.getElementById('register');
+
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                registerForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            }
+        }
+
+        // Function to redirect to index.html on login
+        function login() {
+            // You can add validation and other login logic here
+
+            // Redirect to index.html
+            window.location.href = "index.html";
+        }
+
+        // Function for registration (not implemented here)
+        function register() {
+            // You can add registration logic here
+        }
+    </script>
+</body>
+</html>
